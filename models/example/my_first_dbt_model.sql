@@ -1,1 +1,1 @@
-select * from git-tutorial.stripe.payment
+select * from dbt-tutorial.stripe.payment
