@@ -4,6 +4,9 @@ with customers as (
 orders as (
     select * from {{ ref('fct_orders')}}
 ),
+employees as (
+    select * from {{ref('employees')}}
+),
 customer_orders as (
     select
         customer_id,
@@ -25,5 +28,6 @@ final as (
         customer_orders.lifetime_value
     from customers
     left join customer_orders using (customer_id)
+
 )
 select * from final
